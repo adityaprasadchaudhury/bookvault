@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="classic">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookStore — Pure HTML, CSS & JavaScript Edition</title>
+  <meta name="description" content="A modern, responsive digital bookstore interface built with pure semantic HTML5, modern CSS3, and Vanilla JavaScript.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">📚</div>
+        <div class="brand-text">
+          <span class="brand-name">BookStore</span>
+          <span class="brand-tagline">HTML · CSS · JAVASCRIPT EDITION</span>
+        </div>
+      </div>
+
+      <!-- Search & Theme Bar -->
+      <div class="header-actions">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Search books, authors, or topics..." autocomplete="off">
+          <button id="clear-search" class="clear-btn hidden">&times;</button>
+        </div>
+
+        <!-- Theme Switcher Controls -->
+        <div class="theme-switcher">
+          <button class="theme-btn active" data-set-theme="classic" title="Classic Warm Bookstore">
+            <span class="theme-dot classic-dot"></span> Classic
+          </button>
+          <button class="theme-btn" data-set-theme="midnight" title="Midnight Gilded Dark">
+            <span class="theme-dot midnight-dot"></span> Midnight
+          </button>
+          <button class="theme-btn" data-set-theme="minimalist" title="Editorial Minimalist">
+            <span class="theme-dot minimalist-dot"></span> Minimalist
+          </button>
+        </div>
+
+        <a href="/" class="app-switch-btn" title="Back to React Full-Stack App">
+          React App ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1 class="hero-title">Definitive Books for Software Architects &amp; Founders</h1>
+      <p class="hero-subtitle">
+        Essential guides to help you design, build, and scale great software.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="main-container">
+    <!-- Category Filter Controls -->
+    <nav class="category-nav" aria-label="Book Categories">
+      <button class="category-pill active" data-category="ALL">All Volumes (30)</button>
+      <button class="category-pill" data-category="Distributed Systems">Distributed Systems</button>
+      <button class="category-pill" data-category="Cloud & Infrastructure">Cloud &amp; Infra</button>
+      <button class="category-pill" data-category="Data Engineering">Data Engineering</button>
+      <button class="category-pill" data-category="Security & Cryptography">Security</button>
+      <button class="category-pill" data-category="Leadership & Culture">Leadership</button>
+    </nav>
+
+    <!-- Books Grid Section -->
+    <section class="catalog-section">
+      <div class="catalog-header">
+        <h2 class="section-title" id="catalog-heading">All Monograph Volumes</h2>
+        <div class="catalog-sort">
+          <label for="sort-select">Sort by:</label>
+          <select id="sort-select">
+            <option value="featured">Featured Curations</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="title">Alphabetical (A-Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Book Grid Container (Populated via JS) -->
+      <div id="books-grid" class="books-grid">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>Loading curated volumes from library API...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Book Preview Modal (Semantic <dialog>) -->
+  <dialog id="book-modal" class="modal-dialog">
+    <div class="modal-box">
+      <button id="modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-cover-wrap">
+          <img id="modal-cover" src="" alt="Book Cover" class="modal-cover-img">
+          <span id="modal-format" class="modal-format-badge">DRM-Free PDF</span>
+        </div>
+        <div class="modal-details">
+          <div id="modal-category" class="modal-category-tag">Category</div>
+          <h2 id="modal-title" class="modal-title">Book Title</h2>
+          <p id="modal-author" class="modal-author">by Author Name</p>
+          <div class="modal-price-wrap">
+            <span id="modal-price" class="modal-price">₹699</span>
+            <span class="modal-license">Perpetual Personal License</span>
+          </div>
+          <p id="modal-description" class="modal-description">Detailed book overview text...</p>
+
+          <div class="modal-meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">Pages</span>
+              <span id="modal-pages" class="meta-val">340 pp.</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">File Format</span>
+              <span class="meta-val">Vector PDF (Interactive)</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Delivery</span>
+              <span class="meta-val">Instant Secure Download</span>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button id="modal-buy-btn" class="btn btn-primary">Purchase Digital Edition</button>
+            <button id="modal-dismiss-btn" class="btn btn-secondary">Close Preview</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Simulated Purchase Dialog -->
+  <dialog id="checkout-modal" class="modal-dialog">
+    <div class="modal-box checkout-box">
+      <button id="checkout-close" class="modal-close-btn">&times;</button>
+      <div class="checkout-header">
+        <div class="checkout-icon">💳</div>
+        <h3>Secure Checkout Simulation</h3>
+        <p>Instant digital monograph delivery with DRM-Free cryptographic license</p>
+      </div>
+
+      <div class="checkout-summary">
+        <div class="summary-row">
+          <span id="checkout-book-title">Selected Book</span>
+          <span id="checkout-book-price" class="summary-price">₹699</span>
+        </div>
+        <div class="summary-row text-muted">
+          <span>Digital Delivery Fee</span>
+          <span>₹0 (Free)</span>
+        </div>
+        <div class="summary-total">
+          <span>Total Amount</span>
+          <span id="checkout-total">₹699</span>
+        </div>
+      </div>
+
+      <div class="checkout-notice">
+        🔒 Connected to backend testing API. You can also sign in to the full React app to maintain purchases in your member vault!
+      </div>
+
+      <div class="checkout-actions">
+        <a id="checkout-react-link" href="/" class="btn btn-primary">Open in Full React App to Complete Purchase</a>
+        <button id="checkout-cancel" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Semantic Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="brand">
+          <div class="brand-icon">📚</div>
+          <span class="brand-name">BookStore</span>
+        </div>
+        <p class="footer-text">
+          An independent digital monograph press built using standard HTML5 semantic elements, custom CSS3 variables, and Vanilla JavaScript.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Technology Highlights</h4>
+        <ul class="footer-links">
+          <li>✨ Pure HTML5 Semantic Tags</li>
+          <li>🎨 Modern CSS3 Variables &amp; 3 Themes</li>
+          <li>⚡ Vanilla JS (Zero Framework Bloat)</li>
+          <li>🛡️ Real REST API Integration</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Theme Presets</h4>
+        <ul class="footer-links">
+          <li><button class="text-link" onclick="setTheme('classic')">Classic Bookstore (Warm Parchment)</button></li>
+          <li><button class="text-link" onclick="setTheme('midnight')">Midnight Library (Dark &amp; Gold)</button></li>
+          <li><button class="text-link" onclick="setTheme('minimalist')">Editorial Minimalist (Clean Indigo)</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="current-year"></span> BookStore Press. Crafted with pure HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript App Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

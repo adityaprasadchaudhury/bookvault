@@ -1,0 +1,6 @@
+{
+  "name": "BookVault - Online Book Purchase & Download System",
+  "description": "Browse a catalog of 30 books, securely purchase via Razorpay/UPI test mode, and download protected book files with full authentication and authorization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

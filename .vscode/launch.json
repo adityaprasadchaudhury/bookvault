@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "🚀 Debug BookVault Full-Stack Server",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx", "server.ts"],
+      "env": {
+        "PORT": "3000",
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "restart": true,
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "🧪 Run All Tests (Unit, Integration, Regression)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx", "tests/run-all-tests.ts"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "🌱 Re-Seed Catalog Database",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx", "server/prisma/seed.ts"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

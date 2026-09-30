@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* 
+  =============================================================
+  BookStore Theme Stylesheet - HTML, CSS & Custom Design System
+  =============================================================
+*/
+
+:root {
+  --font-serif: "Merriweather", "Georgia", "Cambria", serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-amber-gold: #b45309;
+  --color-amber-light: #fef3c7;
+  --color-emerald: #0f766e;
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Theme 1: Classic Warm Bookstore (Parchment & Amber Gold) */
+[data-theme="classic"], :root {
+  --bg-app: #faf7f2;
+  --bg-card: #ffffff;
+  --bg-elevated: #f5f0e6;
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #78716c;
+  --border-color: #e7e5e4;
+  --accent-primary: #b45309;
+  --accent-hover: #d97706;
+  --hero-gradient: linear-gradient(135deg, #1c1917 0%, #292524 60%, #44403c 100%);
+  --book-card-shadow: 0 4px 15px rgba(28, 25, 23, 0.06);
+  --book-card-hover-shadow: 0 16px 32px -8px rgba(180, 83, 9, 0.22);
+}
+
+/* Theme 2: Midnight Library (Dark Ink & Gilded Gold) */
+[data-theme="midnight"] {
+  --bg-app: #0b0f19;
+  --bg-card: #111827;
+  --bg-elevated: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border-color: #1f2937;
+  --accent-primary: #f59e0b;
+  --accent-hover: #fbbf24;
+  --hero-gradient: linear-gradient(135deg, #030712 0%, #0f172a 60%, #1e1b4b 100%);
+  --book-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --book-card-hover-shadow: 0 16px 36px -6px rgba(245, 158, 11, 0.25);
+}
+
+/* Theme 3: Editorial Minimalist (Clean Indigo & Stark White) */
+[data-theme="minimalist"] {
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-elevated: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --accent-primary: #2563eb;
+  --accent-hover: #1d4ed8;
+  --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #334155 100%);
+  --book-card-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  --book-card-hover-shadow: 0 12px 24px -4px rgba(37, 99, 235, 0.18);
+}
+
+/* HTML body global transition */
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Book Cover 3D Hover Effect */
+.book-cover-effect {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.book-cover-effect:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--book-card-hover-shadow);
+}
+
+/* Book Spine Simulation Ribbon */
+.book-spine-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.15) 50%, rgba(0,0,0,0.2) 100%);
+  z-index: 10;
+}
+
+/* Gold foil embossed badge */
+.badge-gold-foil {
+  background: linear-gradient(135deg, #b45309 0%, #f59e0b 50%, #d97706 100%);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated Shimmer / Skeleton */
+@keyframes shimmerAnim {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmerAnim 2s infinite;
+}
+
+/* Custom Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}

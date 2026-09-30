@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(uuid())
+  name         String
+  email        String    @unique
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  orders       Order[]
+
+  @@index([email])
+}
+
+model Book {
+  id          String   @id @default(uuid())
+  title       String
+  author      String
+  description String
+  price       Float
+  coverImage  String
+  filePath    String
+  category    String   @default("Technology")
+  pages       Int      @default(250)
+  language    String   @default("English")
+  isbn        String   @default("")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orders      Order[]
+
+  @@index([title])
+  @@index([author])
+}
+
+model Order {
+  id        String    @id @default(uuid())
+  userId    String
+  bookId    String
+  amount    Float
+  status    String    @default("PENDING") // PENDING, COMPLETED, FAILED
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  book      Book      @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  payments  Payment[]
+
+  @@index([userId])
+  @@index([bookId])
+  @@index([status])
+}
+
+model Payment {
+  id               String   @id @default(uuid())
+  orderId          String
+  gatewayOrderId   String   @unique
+  gatewayPaymentId String?
+  signature        String?
+  amount           Float
+  status           String   @default("CREATED") // CREATED, SUCCESS, FAILED
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  order            Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([gatewayOrderId])
+  @@index([status])
+}

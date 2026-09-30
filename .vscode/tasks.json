@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "label": "npm: dev",
+      "detail": "Starts the full-stack BookVault development server",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "test",
+      "problemMatcher": [],
+      "label": "npm: test",
+      "detail": "Runs unit, integration, and regression tests",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "seed",
+      "problemMatcher": [],
+      "label": "npm: seed",
+      "detail": "Seeds database with 30 books and creates sample PDFs"
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$tsc"],
+      "label": "npm: lint",
+      "detail": "Validates TypeScript syntax and types"
+    }
+  ]
+}
