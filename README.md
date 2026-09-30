@@ -1,17 +1,18 @@
 # 📚 BookStore — Digital Monograph Press & Technical Library
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Netlify Status](https://img.shields.io/badge/Deploy-Netlify%20Ready-00ad9f.svg)](https://www.netlify.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-Ready-181717.svg)](https://github.com/)
 
 A modern, high-performance digital technical press and online bookstore. Built for software engineers, systems architects, and technical leaders.
 
 BookVault — Digital Bookstore & Technical Library
 A modern digital bookstore and technical library designed for browsing, exploring, and accessing books through a clean and responsive web interface.
 🌐 Live Demo
-🔗 Visit BookVault
-🎥 Project Demo
-▶️ Watch BookVault Demo
+## 🌐 Live Demo
+
+[Visit BookVault](https://ais-dev-aj5uvj7qlnqkn3knbhuanu-963538535974.asia-southeast1.run.app)
+
+## 🎥 Project Demo
+
+[▶️ Watch BookVault Demo](https://drive.google.com/drive/folders/1zDPyf2GljWXgXgIsDZYxdB-eogrpnQ4z)
 
 ## 💻 Local Development
 
