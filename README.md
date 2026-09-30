@@ -1,11 +1,8 @@
 # 📚 BookStore — Digital Monograph Press & Technical Library
 
 
-A modern, high-performance digital technical press and online bookstore. Built for software engineers, systems architects, and technical leaders.
-
 BookVault — Digital Bookstore & Technical Library
 A modern digital bookstore and technical library designed for browsing, exploring, and accessing books through a clean and responsive web interface.
-🌐 Live Demo
 ## 🌐 Live Demo
 
 [Visit BookVault](https://ais-dev-aj5uvj7qlnqkn3knbhuanu-963538535974.asia-southeast1.run.app)
