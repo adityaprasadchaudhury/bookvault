@@ -8,13 +8,7 @@ A modern, high-performance digital technical press and online bookstore. Built f
 
 ---
 
-## ⚡ Deployment to Netlify (2 Easy Ways)
 
-### Method 1: Netlify Drop (Zero Configuration — Under 1 Minute)
-1. Unzip the project folder on your computer.
-2. Go to [app.netlify.com/drop](https://app.netlify.com/drop).
-3. Drag and drop the unzipped folder directly onto the browser window.
-4. Netlify will deploy your site instantly with a free SSL `.netlify.app` domain!
 
 ### Method 2: Deploy from GitHub to Netlify
 1. Create a new GitHub repository (see GitHub instructions below) and push this code.
