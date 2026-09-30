@@ -6,7 +6,12 @@
 
 A modern, high-performance digital technical press and online bookstore. Built for software engineers, systems architects, and technical leaders.
 
-
+BookVault — Digital Bookstore & Technical Library
+A modern digital bookstore and technical library designed for browsing, exploring, and accessing books through a clean and responsive web interface.
+🌐 Live Demo
+🔗 Visit BookVault
+🎥 Project Demo
+▶️ Watch BookVault Demo
 
 ## 💻 Local Development
 
