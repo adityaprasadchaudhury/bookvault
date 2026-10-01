@@ -81,14 +81,19 @@ User
 
   ↓
 BookVault Website
+
   ↓
 Frontend Interface
+
   ↓
 API Request
+
   ↓
 Backend / Server
+
   ↓
 Book Data
+
   ↓
 Frontend Displays Books
 
