@@ -40,24 +40,23 @@ npm test
 ---
 🛠️ Technologies Used
 
-Frontend
-HTML5
-CSS3
-JavaScript
-Vite
+Frontend:
+HTML5,
+CSS3,
+JavaScript,
 
-Backend
-Node.js
-Express.js
+Backend:
+Node.js,
+Express.js,
 REST API
 
-Database / Services
+Database / Services:
 Firebase
 
-Tools & Deployment
-Git
-GitHub
-VS Code
+Tools & Deployment:
+Git,
+GitHub,
+VS Code,
 Netlify
 ## 📁 Project Architecture
 
