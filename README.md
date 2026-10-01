@@ -8,9 +8,7 @@ A modern digital bookstore and technical library designed for browsing, explorin
 BookVault is a web-based digital bookstore and technical library that allows users to browse and explore a collection of books through a simple and user-friendly interface.
 
 The project demonstrates practical implementation of a web application including frontend development, API communication, data handling, authentication, and deployment
-## 🌐 Live Demo
-
-[Visit BookVault](https://ais-dev-aj5uvj7qlnqkn3knbhuanu-963538535974.asia-southeast1.run.app)
+## 
 
 ## 🎥 Project Demo
 
