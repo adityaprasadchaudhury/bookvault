@@ -1,11 +1,11 @@
 # 📚 BookStore — Digital Monograph Press & Technical Library
 
 
-BookVault — Digital Bookstore & Technical Library
+BookStore — Digital Bookstore & Technical Library
 A modern digital bookstore and technical library designed for browsing, exploring, and accessing books through a clean and responsive web interface.
 
 📖 Project Overview :
-BookVault is a web-based digital bookstore and technical library that allows users to browse and explore a collection of books through a simple and user-friendly interface.
+BookStore is a web-based digital bookstore and technical library that allows users to browse and explore a collection of books through a simple and user-friendly interface.
 
 The project demonstrates practical implementation of a web application including frontend development, API communication, data handling, authentication, and deployment
 ## 
@@ -38,7 +38,23 @@ npm test
 ```
 
 ---
-
+🛠️ Technologies Used
+Frontend
+HTML5
+CSS3
+JavaScript
+Vite
+Backend
+Node.js
+Express.js
+REST API
+Database / Services
+Firebase
+Tools & Deployment
+Git
+GitHub
+VS Code
+Netlify
 ## 📁 Project Architecture
 
 ```text
