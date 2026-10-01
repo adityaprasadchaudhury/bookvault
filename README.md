@@ -80,21 +80,27 @@ Netlify
 User
 
   ↓
+  
 BookVault Website
 
   ↓
+  
 Frontend Interface
 
   ↓
+  
 API Request
 
   ↓
+  
 Backend / Server
 
   ↓
+  
 Book Data
 
   ↓
+  
 Frontend Displays Books
 
 The frontend communicates with the backend through API requests. The backend processes the request and returns the required book data, which is then displayed dynamically on the website.
