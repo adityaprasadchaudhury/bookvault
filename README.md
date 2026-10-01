@@ -39,17 +39,21 @@ npm test
 
 ---
 🛠️ Technologies Used
+
 Frontend
 HTML5
 CSS3
 JavaScript
 Vite
+
 Backend
 Node.js
 Express.js
 REST API
+
 Database / Services
 Firebase
+
 Tools & Deployment
 Git
 GitHub
